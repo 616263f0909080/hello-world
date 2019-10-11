@@ -1,0 +1,189 @@
+xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<{if $is_redirect == 1}>
+<meta http-equiv="Refresh" content="<{$time}>; url=<{$url}>" />
+<{/if}>
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_header}>
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<!-- for active menu link -->
+<{php}>
+$mod = $GLOBALS['xoopsModule'];
+$dirname = (isset($mod) ? $mod->getVar('dirname') :'system');
+$GLOBALS['xoopsTpl']->assign( 'xoops_cmod', $dirname );
+<{/php}>
+
+</head>
+<!-- The body attributes below should be edited according to the modules you have installed to create the active color in the top tabs -->
+<body class="nav_buttons-<{if $xoops_cmod == newbb}>newbb<{elseif $xoops_cmod == wfdownloads}>wfdownloads<{elseif $xoops_cmod == contact}>contact<{else}>home<{/if}>">
+
+<table align="center" cellpadding="0" cellspacing="0" class="head_table">
+<tr> 
+<td align="left" style=" background-image: url(<{$xoops_imageurl}>images/head_tl.gif); background-repeat: no-repeat; background-position: left; padding-left: 20px;" />
+<a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>images/logo.png" width="270" alt="" border="0" /></a>
+</td>
+<td align="right"><img src="<{$xoops_imageurl}>images/head_tr.gif" width="26" alt="" border="0" /></td>
+</tr>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" class="sub_head_table">
+<tr> 
+<td align="left"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>images/head_bl.gif" width="26" alt="" border="0" /></a></td>
+<td align="right">
+<ul id="nav_buttons">
+<li id="nav_home"><a href="<{$xoops_url}>">Home</a></li>
+<li id="nav_newbb"><a href="<{$xoops_url}>/modules/newbb/">Boards</a></li>
+<li id="nav_wfdownloads"><a href="<{$xoops_url}>/modules/wfdownloads/">Files</a></li>
+<li id="nav_contact"><a href="<{$xoops_url}>/modules/contact/">Contact</a></li>
+</ul>
+</td>
+<td align="right"><img src="<{$xoops_imageurl}>images/head_br.gif" width="26" alt="" border="0" /></td>
+
+</tr>
+</table>
+<table align="center" cellpadding="0" cellspacing="0" class="sub_sub_table">
+<tr> 
+<td align="left"><img src="<{$xoops_imageurl}>images/body_tl.gif" width="19" alt="" border="0" /></td>
+<td align="right"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>images/body_tr.gif" width="20" alt="" border="0" /></a></td>
+</tr>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="body_in">
+<tr>
+<td>
+<table align="center" class="body_table">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<{if $xoops_lblocks}>
+<td rowspan="2" valign="top" id="leftcolumn"> 
+<!-- Start left blocks loop -->
+<{foreach item=block from=$xoops_lblocks}>
+<{include file="$xoops_theme/blocks/theme_blockleft.html"}> 
+<{/foreach}> 
+<!-- End left blocks loop -->
+</td>
+<{/if}>
+<td height="17" valign="top">
+<a href="<{$xoops_url}>/"></a>
+<span class="right"></span>
+<span class="left"> 
+
+<script type="text/javascript">
+<!-- // Array ofmonth Names
+var monthNames = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+<div style="display: none;">This Theme was Designed by Mr. Theme (http://www.mrtheme.com)</div>
+var now = new Date();
+thisYear = now.getYear();
+if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+document.write(monthNames[now.getMonth()] + " " + now.getDate() + ", " + thisYear);
+// -->
+</script>
+
+-<{if $xoops_isuser}> Welcome, <a href="<{$xoops_url}>/user.php"><{$xoops_uname}></a> |<{else}> <a href="<{$xoops_url}>/register.php">Register!</a> or <{/if}></span> <span class="right"> <{if
+$xoops_isuser}> <a href="<{$xoops_url}>/user.php?op=logout">Log Out</a><{else}> <a href="<{$xoops_url}>/user.php">Log
+In</a> <{/if}>
+</span>
+<span class="right"></span>
+</td></tr>
+<tr>
+<td align="center">
+
+
+<!-- Display center blocks if any -->
+<{if $xoops_showcblock == 1}>
+<table cellspacing="0">
+<tr valign="top">
+<td id="centerCcolumn" colspan="2">
+<!-- Start center-center blocks loop -->
+<{foreach item=block from=$xoops_ccblocks}>
+<{include file="$xoops_theme/blocks/theme_blockcenter_c.html"}>
+<{/foreach}>
+<!-- End center-center blocks loop -->
+</td>
+</tr>
+<tr>
+<td id="centerLcolumn"> 
+<!-- Start center-left blocks loop -->
+<{foreach item=block from=$xoops_clblocks}>
+<{include file="$xoops_theme/blocks/theme_blockcenter_l.html"}>
+<{/foreach}>
+<!-- End center-left blocks loop -->
+</td>
+<td id="centerRcolumn"> 
+<!-- Start center-right blocks loop -->
+<{foreach item=block from=$xoops_crblocks}>
+<{include file="$xoops_theme/blocks/theme_blockcenter_r.html"}>
+<{/foreach}>
+<!-- End center-right blocks loop -->
+</td>
+</tr>
+</table>
+<{/if}>
+<!-- End display center blocks -->
+<div id="content">
+<{$xoops_contents}>
+</div>
+<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright or $xoBlocks.page_bottomcenter}>
+<table cellspacing="0">
+<{if $xoBlocks.page_bottomcenter}>
+<tr><td id="bottomCcolumn" colspan="2">
+<{foreach from=$xoBlocks.page_bottomcenter item=block}><{include file="$xoops_theme/blocks/theme_blockcenter_c.html"}><{/foreach}>
+</td>
+</tr>
+<{/if}>
+<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomright}>
+<tr>
+<td id="bottomLcolumn">
+<{foreach from=$xoBlocks.page_bottomleft item=block}><{include file="$xoops_theme/blocks/theme_blockcenter_l.html"}><{/foreach}>
+</td>
+<td id="bottomRcolumn">
+<{foreach from=$xoBlocks.page_bottomright item=block}><{include file="$xoops_theme/blocks/theme_blockcenter_r.html"}><{/foreach}>
+</td>
+</tr>
+<{/if}>
+</table>
+<{/if}>
+</td>
+</tr>
+</table>
+</td>
+<{if $xoops_showrblock == 1}>
+<td id="rightcolumn">
+<!-- Start right blocks loop -->
+<{foreach item=block from=$xoops_rblocks}>
+<{include file="$xoops_theme/blocks/theme_blockleft.html"}>
+<{/foreach}>
+<!-- End right blocks loop -->
+</td>
+<{/if}>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="foot_table">
+<tr>
+<td width="1%" align="left"><img src="<{$xoops_imageurl}>images/foot_l.gif" width="38" height="54" alt="" /></td>
+<td class="foot_table2" align="center">Theme Designed by <a href="http://www.mrtheme.com">Mr. Theme</a><br /><br />
+<a href="http://validator.w3.org/check?uri=referer"><img
+src="<{$xoops_imageurl}>images/w3c_xhtml10.png"
+alt="Valid XHTML 1.0 Transitional" height="15" width="80" /></a> &nbsp; <a href=
